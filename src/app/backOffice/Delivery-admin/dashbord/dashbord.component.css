@@ -1,0 +1,27 @@
+.chart {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  height: 400px; /* hauteur du graphique */
+  background-color: #f1f1f1;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+
+.bar {
+  flex: 1;
+  margin-bottom: 5px;
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  transform: scaleY(-1);
+  transform-origin: bottom;
+  transition: height 0.3s;
+}
+
+.bar:hover {
+  height: 200px;
+}
+

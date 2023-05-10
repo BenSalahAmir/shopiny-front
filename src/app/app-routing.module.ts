@@ -12,6 +12,13 @@ import { UpdateuserComponent } from './FrontOffice/user/updateuser/updateuser.co
 import { ErrornotfontComponent } from './FrontOffice/errornotfont/errornotfont.component';
 import { DetailsproductComponent } from './FrontOffice/Shop/detailsproduct/detailsproduct.component';
 import { ListeFavorisComponent } from './FrontOffice/Shop/liste-favoris/liste-favoris.component';
+import { AddproductComponent } from './backOffice/shopAdmin/addproduct/addproduct.component';
+import { ModifyproductComponent } from './backOffice/shopAdmin/modifyproduct/modifyproduct.component';
+import { ListproductsComponent } from './backOffice/shopAdmin/listproducts/listproducts.component';
+import { AddDeliveryComponent } from './backOffice/Delivery-admin/add-deliveryMen/add-delivery.component';
+import { DeliverysmenComponent } from './backOffice/Delivery-admin/deliverysmen/deliverysmen.component';
+import { DeliverysComponent } from './backOffice/Delivery-admin/deliverys/deliverys.component';
+import { ModifDeliveryComponent } from './backOffice/Delivery-admin/modif-delivery/modif-delivery.component';
 
 const routes: Routes = [
   
@@ -74,7 +81,39 @@ const routes: Routes = [
     {
       path:'listeusers',
       component:ListuserComponent
+    },
+      
+    {
+      path:'addproduct',
+      component:AddproductComponent
+    },
+    {
+      path:'modifyproduct/:id',
+      component:ModifyproductComponent
+    },
+    {
+      path:'listproducts',
+      component:ListproductsComponent
+    },
+    {
+      path:'adddelivery',
+      component:AddDeliveryComponent
+    },
+    {
+      path:'deliverysmen',
+      component:DeliverysmenComponent
+    },
+    {
+      path:'deliverys',
+      component:DeliverysComponent
+    },
+    {
+      path:'modifDelivery/:id',
+      component:ModifDeliveryComponent
     }
+    
+
+
   ]
 
 }

@@ -25,6 +25,15 @@ import { DetailsproductComponent } from './FrontOffice/Shop/detailsproduct/detai
 import { RecommandedproductsComponent } from './FrontOffice/Shop/recommandedproducts/recommandedproducts.component';
 import { QrCodeServiceComponent } from './FrontOffice/Shop/qr-code-service/qr-code-service.component';
 import { ListeFavorisComponent } from './FrontOffice/Shop/liste-favoris/liste-favoris.component';
+import { AddproductComponent } from './backOffice/shopAdmin/addproduct/addproduct.component';
+import { ModifyproductComponent } from './backOffice/shopAdmin/modifyproduct/modifyproduct.component';
+import { ListproductsComponent } from './backOffice/shopAdmin/listproducts/listproducts.component';
+import { AddDeliveryComponent } from './backOffice/Delivery-admin/add-deliveryMen/add-delivery.component';
+import { DeliverysmenComponent } from './backOffice/Delivery-admin/deliverysmen/deliverysmen.component';
+import { DeliverysComponent } from './backOffice/Delivery-admin/deliverys/deliverys.component';
+import { ModifDeliveryComponent } from './backOffice/Delivery-admin/modif-delivery/modif-delivery.component';
+import { DashbordComponent } from './backOffice/Delivery-admin/dashbord/dashbord.component';
+
 
 @NgModule({
   declarations: [
@@ -52,6 +61,26 @@ import { ListeFavorisComponent } from './FrontOffice/Shop/liste-favoris/liste-fa
     RecommandedproductsComponent,
     QrCodeServiceComponent,
     ListeFavorisComponent,
+    AddproductComponent,
+    ModifyproductComponent,
+    ListproductsComponent,
+
+
+    AddDeliveryComponent,
+    DeliverysmenComponent,
+    DeliverysComponent,
+    ModifDeliveryComponent,
+    DashbordComponent
+
+
+
+   
+
+
+
+
+
+    
   ],
   imports: [
     BrowserModule,

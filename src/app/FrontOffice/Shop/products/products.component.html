@@ -169,12 +169,18 @@
                                                         </div>
                                                     </div>
                                                     <div class="content">
-                                                        <span class="ratings">
+                                                        <!-- <span class="ratings">
                                                             <span class="rating-wrap">
                                                                 <span class="star" style="width: 100%"></span>
                                                             </span>
                                                             <span class="rating-num d-none">( 5 Review )</span>
-                                                        </span>
+                                                        </span> -->
+                                                        <div class="rating">
+                                                            <span class="star"  *ngFor="let star of stars" [ngClass]="{'filled': star <= productRating}">
+                                                              <ng-container *ngIf="star <= productRating">&#9733;</ng-container>
+                                                              <ng-container *ngIf="star > productRating">&#9734;</ng-container>
+                                                            </span>
+                                                          </div>
                                                         <h5 class="title"><a href="single-product.html">{{prod.nameProduct}}
                                                             </a>
                                                         </h5>
@@ -213,12 +219,23 @@
                                                 <div class="col-md-7 col-lg-7 col-xl-8">
                                                     <div class="content-desc-wrap">
                                                         <div class="content">
-                                                            <span class="ratings">
-                                                                <span class="rating-wrap">
-                                                                    <span class="star" style="width: 100%"></span>
+                                                            <span class="ratings" >
+                                                                <span class="rating-wrap" >
+                                                                    <span class="star" style="width: 100%" *ngFor="let star of stars" [ngClass]="{'filled': star <= productRating}">
+                                                                     <ng-container *ngIf="star <= productRating">&#9733;</ng-container>
+                                                                  <ng-container *ngIf="star > productRating">&#9734;</ng-container>
+                                                                  </span>
                                                                 </span>
                                                                 <span class="rating-num d-none">( 5 Review )</span>
                                                             </span>
+                                                            <!-- <div class="rating">
+                                                                <span class="star"  *ngFor="let star of stars" [ngClass]="{'filled': star <= productRating}">
+                                                                  <ng-container *ngIf="star <= productRating">&#9733;</ng-container>
+                                                                  <ng-container *ngIf="star > productRating">&#9734;</ng-container>
+                                                                 
+                                                                </span>
+                                                              </div> -->
+
                                                             <h5 class="title"><a href="single-product.html">{{ prod.nameProduct }}
                                                             </a></h5>
                                                             <p>{{ prod.descriptionProduct }} </p>

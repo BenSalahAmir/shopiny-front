@@ -11,7 +11,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductsComponent {
   products!:any[];
-  rating: Rating = new Rating();
   userId: string = "a900a796-5fdf-4416-8f25-ac3ea01f9514"; // mettre l'ID de l'utilisateur connecté ici
   isLoggedIn: boolean = false;
  
@@ -23,6 +22,13 @@ export class ProductsComponent {
 
 
   productIdd!: number;
+
+  productId!: number;
+  stars = [1, 2, 3, 4, 5];
+  product1: any;
+  productRating!: number;
+  rating!:any;
+
 
 
 
@@ -76,6 +82,34 @@ ajouterProduitFavori(idProduit: number) {
     },
     error => console.log(error)
   );
+}
+
+//
+
+getProductRatinga(productId: number): void {
+  this.ratingService.getProductRating(productId).subscribe(rating => {
+    this.productRating = rating;
+    // Vous pouvez ajouter d'autres actions à effectuer ici après avoir récupéré le rating
+  }, error => {
+    console.log('Error getting product rating:', error);
+    // Vous pouvez ajouter d'autres actions à effectuer ici en cas d'erreur
+  });
+}
+
+getStars(rating: number): number[] {
+  const stars = [];
+  for (let i = 1; i <= 5; i++) {
+    stars.push(i <= rating ? i : 0);
+  }
+  return stars;
+}
+
+getProductRating(productId: number): void {
+  this.ratingService.getProductRating(productId).subscribe(rating => {
+    this.productRating = rating;
+  }, error => {
+    console.log('Error getting product rating:', error);
+  });
 }
 
 

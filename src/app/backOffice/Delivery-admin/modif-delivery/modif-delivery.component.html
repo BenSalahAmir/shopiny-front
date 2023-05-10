@@ -1,0 +1,87 @@
+<section role="main" class="content-body card-margin" style="width: 1250px;">
+  <header class="page-header">
+      <h2>Form Layouts</h2>
+      <div class="right-wrapper text-end">
+          <ol class="breadcrumbs">
+              <li>
+                  <a href="index-2.html">
+                      <i class="bx bx-home-alt"></i>
+                  </a>
+              </li>
+              <li>
+                  <span>Forms</span>
+              </li>
+              <li>
+                  <span>Layouts</span>
+              </li>
+          </ol>
+          <a class="sidebar-right-toggle" data-open="sidebar-right">
+              <i class="fas fa-chevron-left"></i>
+          </a>
+      </div>
+  </header>
+  <!-- start: page -->
+  <div class="row">
+      <div class="col-lg-12">
+          <form id="form1" class="form-horizontal">
+              <section class="card">
+                  <header class="card-header">
+                      <div class="card-actions">
+                          <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                          <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+                      </div>
+                      <h2 class="card-title">Add Delivery</h2>
+
+                  </header>
+                  <form #fr="ngForm" (ngSubmit)="Submit(fr)">
+                    <div class="mb-3">
+                      <label for="name" class="form-label">Price</label>
+                      <input type="number" name="deliveryPrice" class="form-control" [(ngModel)]="deliveryPrice" id="name">
+                    </div>
+                    <div class="mb-3">
+                      <label for="phoneNumber" class="form-label">delivery time</label>
+                      <input type="date" name="deliverytime" class="form-control" [(ngModel)]="deliverytime" id="phoneNumber">
+                    </div>
+                    <div class="mb-3">
+                      <label for="expectedDeliveryDate" class="form-label">expected Delivery Date</label>
+                      <input type="date" name="expectedDeliveryDate" class="form-control" [(ngModel)]="expectedDeliveryDate">
+                    </div>
+                    <div class="mb-3">
+                      <label for="expectedDeliveryDate" class="form-label">weight</label>
+                      <input type="number" name="weight" class="form-control" [(ngModel)]="weight">
+                    </div>
+                    <div class="mb-3">
+                      <label for="expectedDeliveryDate" class="form-label">customer Satisfaction</label>
+                      <input type="number" name="customerSatisfaction" class="form-control" [(ngModel)]="customerSatisfaction">
+                    </div>
+                    <div class="mb-3">
+                      <label for="availability" class="form-label">status Delivery</label>
+                      <select class="form-select" aria-label="Default select example" name="statusDelivery" [(ngModel)]="statusDelivery" id="availability">
+                        <option selected>Choose status Delivery</option>
+                        <option value="0">DELIVERED</option>
+                        <option value="1">NOT_YET</option>
+                        <option value="2">PROCESSING</option>
+                        <option value="3">CANCELLED</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="level" class="form-label">meanOfTransport</label>
+                      <select class="form-select" aria-label="Default select example" name="meanOfTransport" [(ngModel)]="meanOfTransport" id="level">
+                        <option selected>Choose mean Of Transport</option>
+                        <option value="0">TRUCKERS</option>
+                        <option value="1">RAILWAYS</option>
+                        <option value="2">MARITIMERS</option>
+                        <option value="3">AIRPLANES</option>
+                      </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+
+              </section>
+          </form>
+      </div>
+
+  </div>
+
+  <!-- end: page -->
+</section>

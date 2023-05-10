@@ -1,0 +1,56 @@
+<section role="main" class="content-body card-margin" style="width: 2300px;margin-right: 25px;">
+<div class="row">
+  <div class="col-lg-6">
+    <section class="card">
+      <header class="card-header">
+        <div class="card-actions">
+          <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+          <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+        </div>
+        <h2 class="card-title">Liste deliveries</h2>
+      </header>
+      <div class="card-body">
+        <table class="table table-responsive-md mb-0">
+          <thead>
+            <tr>
+              <th>id_Delivery</th>
+              <th>deliveryPrice</th>
+              <th>deliverytime</th>
+              <th>statusDelivery</th>
+              <th>weight</th>
+              <th style="text-align: center; width: 300px;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="active" *ngFor="let del of deliverys">
+              <td>{{del.id_Delivery}}</td>
+              <td>{{del.deliveryPrice}}</td>
+              <td>{{del.deliverytime | date}}</td>
+              <td>{{del.statusDelivery}}</td>
+              <td>{{del.weight}}</td>
+              <div class="row">
+                <div class="col-6">
+                  <button (click)="deleteDelivery(del.id_Delivery)"   class="btn btn-danger">Supprimer</button>
+                </div>
+                <div class="col-6">
+                  <button [routerLink]="['/admin/modifDelivery',del.id_Delivery]"   class="btn btn-dark">Modifier</button>
+                </div>
+                <div class="col-6">
+                  <button (click)="assignDeliveryToDeliveryMan(del.id_Delivery)"   class="btn btn-primary">AssignToDriver</button>
+                </div>
+                <div class="col-6">
+                  <button (click)="assignDeliveryToBestShippingCompany(del)"   class="btn btn-primary">assignToCompany</button>
+                </div>
+              </div>
+
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+</div>
+
+</section>
