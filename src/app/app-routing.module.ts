@@ -27,6 +27,10 @@ import { ListClaimComponent } from './backOffice/Claim/list-claim/list-claim.com
 import { AddClaimComponent } from './backOffice/Claim/add-claim/add-claim.component';
 import { DeleteClaimComponent } from './backOffice/Claim/delete-claim/delete-claim.component';
 import { UpdatefactureamComponent } from './updatefactuream/updatefactuream.component';
+import { ListForumFrontComponent } from './FrontOffice/forum/list-forum-front/list-forum-front.component';
+import { AddPostFrontComponent } from './FrontOffice/forum/add-post-front/add-post-front.component';
+import { PostDetailsComponent } from './FrontOffice/forum/post-details/post-details.component';
+import { UpdatePostComponent } from './FrontOffice/forum/update-post/update-post.component';
 
 
 const routes: Routes = [
@@ -41,6 +45,25 @@ const routes: Routes = [
   path:'front',
   component:TemplatefrontComponent,
   children:[
+
+
+    {
+      path:'listforum',
+      component:ListForumFrontComponent
+    },
+    {
+      path:'addpost',
+      component:AddPostFrontComponent
+    },
+    {
+      path:'detailpost/:id',
+      component: PostDetailsComponent
+    },
+    {
+      path:'edit/:id',
+      component: UpdatePostComponent
+    }
+   ,
     {
       path:'about',
       component:AboutpageComponent
@@ -154,7 +177,10 @@ const routes: Routes = [
       path:'Updateclaim',
       component:UpdatefactureamComponent
     },
-   
+    
+
+
+  
   
 
 

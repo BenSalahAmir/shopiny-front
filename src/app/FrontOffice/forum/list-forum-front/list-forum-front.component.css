@@ -1,0 +1,21 @@
+.icon-buttons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    outline: 0;
+    color: #AAA;
+  }
+  .icon-buttons2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 90%;
+    cursor: pointer;
+    outline: 0;
+    color: #AAA;
+  }
+  
+  .btn-link i {
+    color: #ccc;
+  }

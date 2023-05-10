@@ -43,6 +43,11 @@ import { ListClaimComponent } from './backOffice/Claim/list-claim/list-claim.com
 import { DetailclaimComponent } from './backOffice/Claim/detailclaim/detailclaim.component';
 import { DeleteClaimComponent } from './backOffice/Claim/delete-claim/delete-claim.component';
 import { UpdatefactureamComponent } from './updatefactuream/updatefactuream.component';
+import { AddPostFrontComponent } from './FrontOffice/forum/add-post-front/add-post-front.component';
+import { ListForumFrontComponent } from './FrontOffice/forum/list-forum-front/list-forum-front.component';
+import { PostDetailsComponent } from './FrontOffice/forum/post-details/post-details.component';
+import { UpdatePostComponent } from './FrontOffice/forum/update-post/update-post.component';
+import { FilterComponent } from './FrontOffice/forum/filter/filter.component';
 
 
 @NgModule({
@@ -94,9 +99,17 @@ import { UpdatefactureamComponent } from './updatefactuream/updatefactuream.comp
     ListClaimComponent,
     DetailclaimComponent,
     DeleteClaimComponent,
-    UpdatefactureamComponent
+    UpdatefactureamComponent,
 
 
+
+    
+
+    AddPostFrontComponent,
+    ListForumFrontComponent,
+    PostDetailsComponent,
+    UpdatePostComponent,
+    FilterComponent,
 
 
 
