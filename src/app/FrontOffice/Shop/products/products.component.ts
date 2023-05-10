@@ -3,6 +3,7 @@ import { ShopServiceService } from 'src/app/service/shopService/shop-service.ser
 import { Rating } from '../../model/Rating';
 import { RatingserviceService } from 'src/app/service/shopService/ratingservice.service';
 import { ActivatedRoute } from '@angular/router';
+import { Product } from '../../model/Product';
 
 @Component({
   selector: 'app-products',
@@ -112,6 +113,14 @@ getProductRating(productId: number): void {
   });
 }
 
+addProductToCart(product: any){
+  this.service.addProductToCart(product.idProduct,this.idClient).subscribe(responce => {
+    console.log(responce);
+  }, error => {
+    console.log('Error adding product to cart:', error);
+  });
+
+}
 
 
 }

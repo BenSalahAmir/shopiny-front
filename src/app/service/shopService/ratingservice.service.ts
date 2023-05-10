@@ -19,4 +19,7 @@ export class RatingserviceService {
   addRating(ratingProduct: any, productId: number, userId: string): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/api/rating/addRatingProduct/${productId}/${userId}`, ratingProduct);
   }
+
+
+
 }

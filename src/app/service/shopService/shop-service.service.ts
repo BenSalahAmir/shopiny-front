@@ -72,6 +72,10 @@ export class ShopServiceService {
     return this.http.post(`${this.baseUrl}/favoris/${idClient}/${idProduit}`, null);
   }
 
+  addProductToCart(productId: number, userId: string): Observable<any> {
+    return this.http.post<any>(`http://localhost:9005/cart/addProductToCart/${productId}/${userId}`, {});
+  }
+
 
   
   }
