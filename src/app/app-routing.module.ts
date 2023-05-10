@@ -6,6 +6,8 @@ import { LoginComponent } from './FrontOffice/user/login/login.component';
 import { AboutpageComponent } from './FrontOffice/aboutpage/aboutpage.component';
 import { ProductsComponent } from './FrontOffice/Shop/products/products.component';
 import { ClaimfrontComponent } from './FrontOffice/claimfront/claimfront.component';
+import { AllTemplateAdminComponent } from './backOffice/all-template-admin/all-template-admin.component';
+import { ListuserComponent } from './backOffice/user/listuser/listuser.component';
 
 const routes: Routes = [
   
@@ -40,6 +42,17 @@ const routes: Routes = [
     {
       path:'claim',
       component:ClaimfrontComponent
+    }
+  ]
+
+},
+{
+  path:'admin',
+  component:AllTemplateAdminComponent,
+  children:[
+    {
+      path:'listeusers',
+      component:ListuserComponent
     }
   ]
 

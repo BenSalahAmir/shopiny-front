@@ -13,10 +13,21 @@ import { ProductsComponent } from './FrontOffice/Shop/products/products.componen
 import { ClaimfrontComponent } from './FrontOffice/claimfront/claimfront.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderAdminComponent } from './backOffice/header-admin/header-admin.component';
+import { FooterAdminComponent } from './backOffice/footer-admin/footer-admin.component';
+import { SideAdminComponent } from './backOffice/side-admin/side-admin.component';
+import { BodyAdminComponent } from './backOffice/body-admin/body-admin.component';
+import { AllTemplateAdminComponent } from './backOffice/all-template-admin/all-template-admin.component';
+import { ListuserComponent } from './backOffice/user/listuser/listuser.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderAdminComponent,
+    FooterAdminComponent,
+    SideAdminComponent,
+    BodyAdminComponent,
+    AllTemplateAdminComponent,
     TemplatefrontComponent,
     FooterComponent,
     HeaderComponent,
@@ -25,6 +36,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AboutpageComponent,
     ProductsComponent,
     ClaimfrontComponent,
+    ListuserComponent
   ],
   imports: [
     BrowserModule,

@@ -62,7 +62,7 @@ export class LoginComponent {
         localStorage.setItem('accessToken', this.accessToken);
         const role = this.yourService.getRoleFromToken(); // Get the user's role from the access token
         if (role === 'admin') {
-          this.router.navigate(['/front/home']); // Redirect to the "admin" page
+          this.router.navigate(['/admin']); // Redirect to the "admin" page
         } else if (role === 'member') {
           this.router.navigate(['/front']); // Redirect to the "front" page
         } else {
