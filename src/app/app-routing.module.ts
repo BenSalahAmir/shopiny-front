@@ -31,6 +31,7 @@ import { ListForumFrontComponent } from './FrontOffice/forum/list-forum-front/li
 import { AddPostFrontComponent } from './FrontOffice/forum/add-post-front/add-post-front.component';
 import { PostDetailsComponent } from './FrontOffice/forum/post-details/post-details.component';
 import { UpdatePostComponent } from './FrontOffice/forum/update-post/update-post.component';
+import { ListcartpendingComponent } from './FrontOffice/cart/listcartpending/listcartpending.component';
 
 
 const routes: Routes = [
@@ -102,6 +103,10 @@ const routes: Routes = [
     {
       path:'error',
       component:ErrornotfontComponent
+    },
+    {
+      path:'Listcartpending',
+      component:ListcartpendingComponent
     }
   ]
 

@@ -1,0 +1,13 @@
+table {
+    width: 80%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    width: 10%;
+  }
+  
+  /* Decrease the cell size */
+ 

@@ -12,6 +12,8 @@ export class Product {
     marqueProduct!: string;
     referenceProduct!:string;
     ratings!: Rating[]; // ajout de la propriété ratings
+    qttordered!: number;
+    idCart!:number; // ajout de la propriété ratings
   }
   
   

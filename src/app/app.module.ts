@@ -48,6 +48,9 @@ import { ListForumFrontComponent } from './FrontOffice/forum/list-forum-front/li
 import { PostDetailsComponent } from './FrontOffice/forum/post-details/post-details.component';
 import { UpdatePostComponent } from './FrontOffice/forum/update-post/update-post.component';
 import { FilterComponent } from './FrontOffice/forum/filter/filter.component';
+import { ListcartpendingComponent } from './FrontOffice/cart/listcartpending/listcartpending.component';
+import { ListdiscountComponent } from './FrontOffice/cart/listdiscount/listdiscount.component';
+import { UpdateDiscountComponent } from './FrontOffice/cart/update-discount/update-discount.component';
 
 
 @NgModule({
@@ -110,6 +113,9 @@ import { FilterComponent } from './FrontOffice/forum/filter/filter.component';
     PostDetailsComponent,
     UpdatePostComponent,
     FilterComponent,
+    ListcartpendingComponent,
+    ListdiscountComponent,
+    UpdateDiscountComponent
 
 
 

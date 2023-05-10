@@ -1,0 +1,53 @@
+<section role="main" class="content-body card-margin" style="width: 2400px;">
+  <div class="row">
+    <div class="col-lg-6">
+      <section class="card">
+        <header class="card-header">
+          <div class="card-actions">
+            <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+            <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+          </div>
+          <h2 class="card-title">Liste products pending</h2>
+          <div>
+            <label for="discount-code">Discount Code:</label>
+            <input type="text" id="discount-code" [(ngModel)]="discountCode">
+            <button class="btn btn-primary" (click)="applyDiscount()" >Apply</button>
+          </div>
+        </header>
+        <div class="card-body">
+          <table class="table table-responsive-md mb-0">
+            <thead>
+              <tr>
+                <th>idProduct</th>
+                <th>priceProduct</th>
+                <th>nameProduct</th>
+                <th>Quantity:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="active" *ngFor="let product of products">
+                <td>{{product.idProduct}}</td>
+                <td>{{product.priceProduct}}</td>
+                <td>{{product.nameProduct}}</td>
+                <td>
+                  <button (click)="decreaseProductQuantity(product)">-</button>
+                  {{product.qttordered }}
+                  <button (click)="increaseProductQuantity(product)">+</button>
+                </td>
+
+                <td>
+                  <button class="btn btn-primary" (click)="deleteProductFromCart(product.idCart, product.idProduct, userId)">Delete</button>
+                </td>
+                
+              </tr>
+                           
+            </tbody>
+          </table>
+          <div>
+            <h1>Total: {{ total }}</h1>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>

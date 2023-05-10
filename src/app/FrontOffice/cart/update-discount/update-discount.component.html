@@ -1,0 +1,28 @@
+<!-- update-discount.component.html -->
+<h1>Update Discount</h1>
+<form>
+  <div>
+    <label for="amount">Amount</label>
+    <input type="number" id="amount" [(ngModel)]="discount.amount" name="amount">
+  </div>
+
+  <div>
+    <label for="discountCode">Discount Code</label>
+    <input type="text" id="discountCode" [(ngModel)]="discount.discountCode" name="discountCode">
+  </div>
+
+  <div>
+    <label for="discountStatus">Discount Status</label>
+    <select id="discountStatus" [(ngModel)]="discount.discountStatus" name="discountStatus">
+      <option value="EXPIRED">Expired</option>
+      <option value="VALID">Valid</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="percentage">Percentage</label>
+    <input type="checkbox" id="percentage" [(ngModel)]="discount.percentage" name="percentage">
+  </div>
+
+  <button type="button" (click)="updateDiscount()"routerLink="/admin/listdiscount">Update</button>
+</form>
