@@ -1,0 +1,81 @@
+<!-- update.component.html -->
+
+<section role="main" class="content-body card-margin" style="width: 1250px;">
+  <header class="page-header">
+      <h2>Form Layouts</h2>
+      <div class="right-wrapper text-end">
+          <ol class="breadcrumbs">
+              <li>
+                  <a href="index-2.html">
+                      <i class="bx bx-home-alt"></i>
+                  </a>
+              </li>
+              <li>
+                  <span>Forms</span>
+              </li>
+              <li>
+                  <span>Layouts</span>
+              </li>
+          </ol>
+          <a class="sidebar-right-toggle" data-open="sidebar-right">
+              <i class="fas fa-chevron-left"></i>
+          </a>
+      </div>
+  </header>
+  <!-- start: page -->
+  <div class="row">
+      <div class="col-lg-12">
+          <form id="form1" class="form-horizontal">
+            <div class="row">
+              <div class="col-lg-6">
+              <section class="card">
+                  <header class="card-header">
+                      <div class="card-actions">
+                          <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                          <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+                      </div>
+                      <h2 class="card-title">updatebill bill</h2>
+
+                  </header>
+                  <form (ngSubmit)="updateBill()">
+                    <!-- <div class="mb-3">
+                      <label for="idFacture" class="form-label">idFacture</label>
+                      <input type="number" name="idFacture" class="form-control" [(ngModel)]="bill1.idFacture" id="idFacture">
+                    </div> -->
+                    <div class="mb-3">
+                      <label for="topicFacture" class="form-label">topicFacture</label>
+                      <input type="text" name="topicFacture" class="form-control" [(ngModel)]="bill1.topicFacture" id="topicFacture">
+                    </div>
+                    <div class="mb-3">
+                      <label for="reference" class="form-label">reference</label>
+                      <input type="text" name="reference" class="form-control" [(ngModel)]="bill1.reference" id="reference">
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="priceTotal" class="form-label">priceTotal</label>
+                      <input type="number" name="priceTotal" class="form-control" [(ngModel)]="bill1.priceTotal" id="priceTotal">
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="datefacture" class="form-label">datefacture</label>
+                      <input type="date" name="datefacture" class="form-control" [(ngModel)]="bill1.datefacture" id="datefacture">
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="devise" class="form-label">devise</label>
+                      <input type="text" name="devise" class="form-control" [(ngModel)]="bill1.devise" id="devise">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+
+              </section>      </div>
+            </div>
+
+          </form>
+      </div>
+
+  </div>
+
+  <!-- end: page -->
+</section>

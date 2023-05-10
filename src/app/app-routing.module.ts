@@ -19,6 +19,15 @@ import { AddDeliveryComponent } from './backOffice/Delivery-admin/add-deliveryMe
 import { DeliverysmenComponent } from './backOffice/Delivery-admin/deliverysmen/deliverysmen.component';
 import { DeliverysComponent } from './backOffice/Delivery-admin/deliverys/deliverys.component';
 import { ModifDeliveryComponent } from './backOffice/Delivery-admin/modif-delivery/modif-delivery.component';
+import { ListebillComponent } from './backOffice/bill/listebill/listebill.component';
+import { AddbillComponent } from './backOffice/bill/addbill/addbill.component';
+import { UpdatebillComponent } from './backOffice/bill/updatebill/updatebill.component';
+import { DetailsbillComponent } from './backOffice/bill/detailsbill/detailsbill.component';
+import { ListClaimComponent } from './backOffice/Claim/list-claim/list-claim.component';
+import { AddClaimComponent } from './backOffice/Claim/add-claim/add-claim.component';
+import { DeleteClaimComponent } from './backOffice/Claim/delete-claim/delete-claim.component';
+import { UpdatefactureamComponent } from './updatefactuream/updatefactuream.component';
+
 
 const routes: Routes = [
   
@@ -110,8 +119,43 @@ const routes: Routes = [
     {
       path:'modifDelivery/:id',
       component:ModifDeliveryComponent
-    }
-    
+    } ,{
+      path:'listbill',
+      component:ListebillComponent
+    },
+    {
+      path:'addbill',
+      component:AddbillComponent
+    },
+    {
+      path:'updatebill/:id',
+      component:UpdatebillComponent
+    },
+    {
+      path:'detailbill/:id',
+     component: DetailsbillComponent
+   },
+   {
+    path:'Listclaim',
+    component:ListClaimComponent
+  },
+
+  {
+    path:'addclaim',
+    component:AddClaimComponent
+  },
+
+
+    {
+      path:'DeleteClaimComponent',
+      component:DeleteClaimComponent
+    },
+    {
+      path:'Updateclaim',
+      component:UpdatefactureamComponent
+    },
+   
+  
 
 
   ]

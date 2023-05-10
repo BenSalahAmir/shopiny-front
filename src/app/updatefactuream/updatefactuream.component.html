@@ -1,0 +1,19 @@
+<form (submit)="onSubmit()">
+  <div class="form-group">
+    <label for="reference">Reference:</label>
+    <input type="text" class="form-control" id="reference" name="reference" [(ngModel)]="facture.reference">
+  </div>
+  <div class="form-group">
+    <label for="archive">Archive:</label>
+    <input type="checkbox" class="form-control" id="archive" name="archive" [(ngModel)]="facture.archive">
+  </div>
+  <div class="form-group">
+    <label for="datefacture">Datefacture:</label>
+    <input type="text" class="form-control" id="datefacture" name="datefacture" [(ngModel)]="facture.datefacture">
+  </div>
+  <div class="form-group">
+    <label for="priceTotal">Price Total:</label>
+    <input type="text" class="form-control" id="priceTotal" name="priceTotal" [(ngModel)]="facture.priceTotal">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

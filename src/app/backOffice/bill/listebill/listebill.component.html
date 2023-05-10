@@ -1,0 +1,62 @@
+<section role="main" class="content-body card-margin" style="width: 2400px;">
+  <div class="row">
+    <div class="col-lg-6">
+      <section class="card">
+        <header class="card-header">
+          <div class="card-actions">
+            <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+            <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+          </div>
+          <h2 class="card-title">Liste Bill</h2>
+        </header>
+        <div class="card-body">
+          <table class="table table-responsive-md mb-0">
+            <thead>
+              <tr>
+                <th>idFacture</th>
+                <th>reference</th>
+                <th>archive</th>
+                <th>datefacture</th>
+                <th>priceTotal</th>
+                <th>Action</th>
+
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="active" *ngFor="let del of bill">
+                <td>{{del.idFacture}}</td>
+                <td>{{del.reference}}</td>
+                <td>{{del.archive}}</td>
+                <td>{{del.datefacture}}</td>
+                <td>{{del.priceTotal}}</td>
+                <td>
+                  <button (click)="navigateTodetails(del.idFacture)" class="btn btn-info btn-sm" >
+                    <i class="fas fa-info-circle"></i>
+                  </button>
+                  <td>
+
+                    <button (click)="onDeleteFacture(del.idFacture)" class="btn btn-danger btn-sm" >
+                      <i class="fas fa-trash"></i>
+                    </button>                <td>
+
+                    <button routerLink="/admin/updatebill/{{del.idFacture}}" class="btn btn-info btn-sm" >
+                      <i class="fas fa-edit"></i>
+                    </button>
+
+                </td>
+
+              </tr>
+              <button [routerLink]="['/admin/addbill']" class="btn btn-info">Add</button>
+
+
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+  </div>
+
+  </section>

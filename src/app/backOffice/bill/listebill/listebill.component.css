@@ -1,0 +1,9 @@
+.toast-message {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 18px;
+  height: 150px;
+}

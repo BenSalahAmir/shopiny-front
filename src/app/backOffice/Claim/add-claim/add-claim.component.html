@@ -1,0 +1,79 @@
+<section role="main" class="content-body card-margin" style="width: 1250px;">
+  <header class="page-header">
+      <h2>Form Layouts</h2>
+      <div class="right-wrapper text-end">
+          <ol class="breadcrumbs">
+              <li>
+                  <a href="index-2.html">
+                      <i class="bx bx-home-alt"></i>
+                  </a>
+              </li>
+              <li>
+                  <span>Forms</span>
+              </li>
+              <li>
+                  <span>Layouts</span>
+              </li>
+          </ol>
+          <a class="sidebar-right-toggle" data-open="sidebar-right">
+              <i class="fas fa-chevron-left"></i>
+          </a>
+      </div>
+  </header>
+  <!-- start: page -->
+  <div class="row">
+      <div class="col-lg-12">
+          <form id="form1" class="form-horizontal">
+            <div class="row">
+              <div class="col-lg-6">
+              <section class="card">
+                  <header class="card-header">
+                      <div class="card-actions">
+                          <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                          <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+                      </div>
+                      <h2 class="card-title">add bill</h2>
+
+                  </header>
+                  <form #fr="ngForm" (ngSubmit)="Submit(fr)">
+                    <div class="mb-3">
+                      <label for="idClaim" class="form-label">idClaim</label>
+                      <input type="number" name="idClaim" class="form-control" [(ngModel)]="idClaim" id="idClaim">
+                    </div>
+                    <div class="mb-3">
+                      <label for="descriptionClaim" class="form-label">descriptionClaim</label>
+                      <input type="text" name="descriptionClaim" class="form-control" [(ngModel)]="descriptionClaim" id="descriptionClaim">
+                    </div>
+                    <div class="mb-3">
+                      <label for="dateCreationClaim" class="form-label">dateCreationClaim</label>
+                      <input type="date" name="dateCreationClaim" class="form-control" [(ngModel)]="dateCreationClaim" id="dateCreationClaim">
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="categoryClaim" class="form-label">categoryClaim</label>
+                      <input type="text" name="categoryClaim" class="form-control" [(ngModel)]="categoryClaim" id="categoryClaim">
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="statusClaim" class="form-label">statusClaim</label>
+                      <input type="text" name="statusClaim" class="form-control" [(ngModel)]="statusClaim" id="statusClaim">
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="devise" class="form-label">referencefacture</label>
+                      <input type="text" name="devise" class="form-control" [(ngModel)]="referencefacture" id="referencefacture">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+
+              </section>      </div>
+            </div>
+
+          </form>
+      </div>
+
+  </div>
+
+  <!-- end: page -->
+</section> 

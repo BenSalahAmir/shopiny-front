@@ -33,6 +33,16 @@ import { DeliverysmenComponent } from './backOffice/Delivery-admin/deliverysmen/
 import { DeliverysComponent } from './backOffice/Delivery-admin/deliverys/deliverys.component';
 import { ModifDeliveryComponent } from './backOffice/Delivery-admin/modif-delivery/modif-delivery.component';
 import { DashbordComponent } from './backOffice/Delivery-admin/dashbord/dashbord.component';
+import { ToastrModule } from 'ngx-toastr';
+import { ListebillComponent } from './backOffice/bill/listebill/listebill.component';
+import { AddbillComponent } from './backOffice/bill/addbill/addbill.component';
+import { UpdatebillComponent } from './backOffice/bill/updatebill/updatebill.component';
+import { DetailsbillComponent } from './backOffice/bill/detailsbill/detailsbill.component';
+import { AddClaimComponent } from './backOffice/Claim/add-claim/add-claim.component';
+import { ListClaimComponent } from './backOffice/Claim/list-claim/list-claim.component';
+import { DetailclaimComponent } from './backOffice/Claim/detailclaim/detailclaim.component';
+import { DeleteClaimComponent } from './backOffice/Claim/delete-claim/delete-claim.component';
+import { UpdatefactureamComponent } from './updatefactuream/updatefactuream.component';
 
 
 @NgModule({
@@ -70,11 +80,21 @@ import { DashbordComponent } from './backOffice/Delivery-admin/dashbord/dashbord
     DeliverysmenComponent,
     DeliverysComponent,
     ModifDeliveryComponent,
-    DashbordComponent
+    DashbordComponent,
 
 
+    ListebillComponent,
+    AddbillComponent,
+    UpdatebillComponent,
+    DetailsbillComponent,
 
-   
+
+    
+    AddClaimComponent,
+    ListClaimComponent,
+    DetailclaimComponent,
+    DeleteClaimComponent,
+    UpdatefactureamComponent
 
 
 
@@ -85,6 +105,7 @@ import { DashbordComponent } from './backOffice/Delivery-admin/dashbord/dashbord
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ToastrModule.forRoot(),
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
