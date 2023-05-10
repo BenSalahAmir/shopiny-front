@@ -11,6 +11,7 @@ import { ListuserComponent } from './backOffice/user/listuser/listuser.component
 import { UpdateuserComponent } from './FrontOffice/user/updateuser/updateuser.component';
 import { ErrornotfontComponent } from './FrontOffice/errornotfont/errornotfont.component';
 import { DetailsproductComponent } from './FrontOffice/Shop/detailsproduct/detailsproduct.component';
+import { ListeFavorisComponent } from './FrontOffice/Shop/liste-favoris/liste-favoris.component';
 
 const routes: Routes = [
   
@@ -47,6 +48,10 @@ const routes: Routes = [
       component:DetailsproductComponent
     }
     ,
+    {
+      path:'favorisproducts',
+      component:ListeFavorisComponent
+    },
     {
       path:'claim',
       component:ClaimfrontComponent

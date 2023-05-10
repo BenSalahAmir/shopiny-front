@@ -157,8 +157,9 @@
                                                             <span class="new">New</span>
                                                         </span>
                                                         <div class="actions">
-                                                            <a  class="action wishlist"
-                                                                title="Wishlist" (click)="ajouterProduitFavori(prod.idProduct)">   {{prod.estDansFavoris ? "❤️" : "🤍"}}</a>
+                                                            <button  class="action wishlist"
+                                                                title="Wishlist" (click)="ajouterProduitFavori(prod.idProduct)">   {{prod.estDansFavoris ? "❤️" : "🤍"}}
+                                                            </button>
                                                             <a href="#" class="action quickview"
                                                                 data-link-action="quickview" title="Quick view"
                                                                 data-bs-toggle="modal" data-bs-target="#exampleModald"><i
@@ -193,17 +194,15 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane fade show active" id="shop-list">
-                                        <div class="shop-list-wrapper">
-                                            <div class="row">
+                                        <div class="shop-list-wrapper" *ngFor="let prod of products.slice((currentPage-1)*pageSize, currentPage*pageSize)">
+                                            <div class="row" >
                                                 <div class="col-md-5 col-lg-5 col-xl-4">
-                                                    <div class="product">
-                                                        <div class="thumb">
+                                                    <div class="product" >
+                                                        <div class="thumb" >
                                                             <a href="single-product.html" class="image">
-                                                                <img src="assets/images/product-image/1.jpg"
-                                                                    alt="Product" />
+                                                                <img [src]="getImage(prod)" alt="{{prod.nameProduct}}"  />
                                                                 <img class="hover-image"
-                                                                    src="assets/images/product-image/1.jpg"
-                                                                    alt="Product" />
+                                                                [src]="getImage(prod)" alt="{{prod.nameProduct}}"  />
                                                             </a>
                                                             <span class="badges">
                                                                 <span class="new">New</span>
@@ -220,17 +219,13 @@
                                                                 </span>
                                                                 <span class="rating-num d-none">( 5 Review )</span>
                                                             </span>
-                                                            <h5 class="title"><a href="single-product.html">Hand-Made Garlic
-                                                                Mortar
+                                                            <h5 class="title"><a href="single-product.html">{{ prod.nameProduct }}
                                                             </a></h5>
-                                                            <p>nnnnnnnnnnnnnnnLorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                                                sed do eiusmodol tempor incididunt ut labore et dolore
-                                                                magna aliqua. Ut enim ad minim veni quis nostrud
-                                                                exercitation ullamco laboris </p>
+                                                            <p>{{ prod.descriptionProduct }} </p>
                                                         </div>
                                                         <div class="box-inner">
                                                             <span class="price">
-                                                                <span class="new">$38.50</span>
+                                                                <span class="new">{{ prod.priceProduct }}TND</span>
                                                             </span>
                                                             <div class="actions">
                                                                 <a href="wishlist.html" class="action wishlist"
