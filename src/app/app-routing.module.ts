@@ -10,6 +10,7 @@ import { AllTemplateAdminComponent } from './backOffice/all-template-admin/all-t
 import { ListuserComponent } from './backOffice/user/listuser/listuser.component';
 import { UpdateuserComponent } from './FrontOffice/user/updateuser/updateuser.component';
 import { ErrornotfontComponent } from './FrontOffice/errornotfont/errornotfont.component';
+import { DetailsproductComponent } from './FrontOffice/Shop/detailsproduct/detailsproduct.component';
 
 const routes: Routes = [
   
@@ -39,6 +40,11 @@ const routes: Routes = [
     {
       path:'shop',
       component:ProductsComponent
+    }
+    ,
+    {
+      path:'detailproduct/:id',
+      component:DetailsproductComponent
     }
     ,
     {

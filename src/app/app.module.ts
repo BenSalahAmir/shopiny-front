@@ -21,6 +21,10 @@ import { AllTemplateAdminComponent } from './backOffice/all-template-admin/all-t
 import { ListuserComponent } from './backOffice/user/listuser/listuser.component';
 import { UpdateuserComponent } from './FrontOffice/user/updateuser/updateuser.component';
 import { ErrornotfontComponent } from './FrontOffice/errornotfont/errornotfont.component';
+import { DetailsproductComponent } from './FrontOffice/Shop/detailsproduct/detailsproduct.component';
+import { RecommandedproductsComponent } from './FrontOffice/Shop/recommandedproducts/recommandedproducts.component';
+import { QrCodeServiceComponent } from './FrontOffice/Shop/qr-code-service/qr-code-service.component';
+import { ListeFavorisComponent } from './FrontOffice/Shop/liste-favoris/liste-favoris.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,14 @@ import { ErrornotfontComponent } from './FrontOffice/errornotfont/errornotfont.c
     ClaimfrontComponent,
     ListuserComponent,
     UpdateuserComponent,
-    ErrornotfontComponent
+    ErrornotfontComponent,
+
+
+
+    DetailsproductComponent,
+    RecommandedproductsComponent,
+    QrCodeServiceComponent,
+    ListeFavorisComponent,
   ],
   imports: [
     BrowserModule,
