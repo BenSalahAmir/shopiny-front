@@ -245,8 +245,11 @@
                                                                 <span class="new">{{ prod.priceProduct }}TND</span>
                                                             </span>
                                                             <div class="actions">
-                                                                <a href="wishlist.html" class="action wishlist"
-                                                                    title="Wishlist"><i class="pe-7s-like"></i></a>
+                                                                <!-- <a href="wishlist.html" class="action wishlist"
+                                                                    title="Wishlist"><i class="pe-7s-like"></i></a> -->
+                                                                    <button  class="action wishlist"
+                                                                    title="Wishlist" (click)="ajouterProduitFavori(prod.idProduct)">   {{prod.estDansFavoris ? "❤️" : "🤍"}}
+                                                                </button>
                                                                 <a href="#" class="action quickview"
                                                                     data-link-action="quickview" title="Quick view"
                                                                     data-bs-toggle="modal"

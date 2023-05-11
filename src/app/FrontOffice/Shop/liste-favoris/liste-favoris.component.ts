@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UsersServiceService } from 'src/app/service/Users/users-service.service';
 import { ShopServiceService } from 'src/app/service/shopService/shop-service.service';
 
 @Component({
@@ -9,10 +10,12 @@ import { ShopServiceService } from 'src/app/service/shopService/shop-service.ser
 export class ListeFavorisComponent {
   products!:any[];
   idClient ="a900a796-5fdf-4416-8f25-ac3ea01f9514" ;
-  constructor(private service:ShopServiceService){}
+  userId:any= this.servicea.getUserIdFromToken();
+
+  constructor(private service:ShopServiceService,private servicea:UsersServiceService){}
 
   ngOnInit(): void {
-    this.service.getProductsFavoris(this.idClient).subscribe(res => {
+    this.service.getProductsFavoris(this.userId).subscribe(res => {
       console.log(res)
       this.products=res
     })

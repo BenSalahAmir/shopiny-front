@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UsersServiceService } from 'src/app/service/Users/users-service.service';
 
 @Component({
   selector: 'app-add-post-front',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AddPostFrontComponent {
   
-  constructor(private fb: FormBuilder,private http: HttpClient,private router: Router ) { }
+  constructor(private fb: FormBuilder,private http: HttpClient,private router: Router ,private service: UsersServiceService) { }
  
   ngForm!: FormGroup;
   categories = [
@@ -21,7 +22,7 @@ export class AddPostFrontComponent {
 
  
   imagePost!: File;
- 
+  userIdamir:any= this.service.getUserIdFromToken();
   userId!: string;
   categoryId!: number;
   topic!: string;
@@ -35,7 +36,7 @@ export class AddPostFrontComponent {
 
   ngOnInit(): void {
     this.ngForm = this.fb.group({
-      userId: ['a900a796-5fdf-4416-8f25-ac3ea01f9514', Validators.required],
+      userId: [this.userIdamir, Validators.required],
       categoryId: ['', Validators.required],
       description: ['', Validators.required],
       topic: ['', Validators.required]

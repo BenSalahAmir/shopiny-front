@@ -10,7 +10,7 @@ import { Product } from '../../model/Product';
 })
 export class ListcartpendingComponent implements OnInit {
   userId = 'a900a796-5fdf-4416-8f25-ac3ea01f9514';
-  cartId = 1;
+  cartId = 7;
   products!:Product[];
   productId!: number;
   total!: number;
@@ -23,7 +23,7 @@ export class ListcartpendingComponent implements OnInit {
   ngOnInit() {
      this.getPendingCartProducts();
      this.getCartTotal();
-     
+
   }
 
   getPendingCartProducts() {
@@ -32,7 +32,7 @@ export class ListcartpendingComponent implements OnInit {
         (products: Product[]) => {
           this.products = products;
           console.log(products);
-  
+
           // Call fetchQuantities for each product
            this.products.forEach((product: Product) => {
             this.fetchQuantities(product);
@@ -45,7 +45,7 @@ export class ListcartpendingComponent implements OnInit {
           //       console.error(error);
           //       // Handle the error here, such as setting a default quantity or showing an error message
           //     }
-              
+
           //   );
            });
         },
@@ -55,8 +55,8 @@ export class ListcartpendingComponent implements OnInit {
         }
       );
   }
-  
-  
+
+
 
   fetchQuantities(product:Product) {
     this.cartService
@@ -75,7 +75,7 @@ export class ListcartpendingComponent implements OnInit {
 
 
   deleteProductFromCart(cartId: number, productId: number, userId: string) {
-    this.cartService.deleteProductFromCart(1, productId, 'a900a796-5fdf-4416-8f25-ac3ea01f9514').subscribe(
+    this.cartService.deleteProductFromCart(7, productId, 'a900a796-5fdf-4416-8f25-ac3ea01f9514').subscribe(
       response => {
         console.log(response);
         console.log(response.body); // log the response body
@@ -111,21 +111,21 @@ export class ListcartpendingComponent implements OnInit {
       }
     );
     }
-  
+
   increaseProductQuantity(product: Product) {
     this.cartService.increaseProductQuantity(this.cartId, product.idProduct)
       .subscribe(
         updatedProduct  => {
           product.qttordered = updatedProduct.qttordered;
-          
+
         },
         error => {
           console.log(error);
         }
-  
+
       );
       location.reload();
-      
+
 
   }
 
@@ -135,7 +135,7 @@ export class ListcartpendingComponent implements OnInit {
         updatedProduct  => {
           product.qttordered = updatedProduct.qttordered;
           this.total -= updatedProduct.priceProduct;
-          
+
         },
         error => {
           console.log(error);
@@ -143,10 +143,10 @@ export class ListcartpendingComponent implements OnInit {
       );
       location.reload();
 
-      
+
 
   }
-  
+
   applyDiscount() {
     this.cartService.applyDiscount(this.discountCode,this.cartId, this.userId)
       .subscribe(

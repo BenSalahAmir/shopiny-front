@@ -4,6 +4,7 @@ import { Rating } from '../../model/Rating';
 import { RatingserviceService } from 'src/app/service/shopService/ratingservice.service';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../model/Product';
+import { UsersServiceService } from 'src/app/service/Users/users-service.service';
 
 @Component({
   selector: 'app-products',
@@ -12,6 +13,8 @@ import { Product } from '../../model/Product';
 })
 export class ProductsComponent {
   products!:any[];
+
+
   userId: string = "a900a796-5fdf-4416-8f25-ac3ea01f9514"; // mettre l'ID de l'utilisateur connecté ici
   isLoggedIn: boolean = false;
  
@@ -19,6 +22,10 @@ export class ProductsComponent {
   currentPage: number = 1;
   pageSize: number = 6;
   pagesToShow: number[] = [];
+
+  userIdamir:any= this.serviceuser.getUserIdFromToken();
+
+
   idClient = "a900a796-5fdf-4416-8f25-ac3ea01f9514";
 
 
@@ -33,7 +40,7 @@ export class ProductsComponent {
 
 
 
-  constructor(private route: ActivatedRoute, private service:ShopServiceService, private ratingService: RatingserviceService){}
+  constructor(private route: ActivatedRoute, private service:ShopServiceService, private ratingService: RatingserviceService,private serviceuser:UsersServiceService){}
 
   ngOnInit(): void {
     this.service.getProducts().subscribe(res => {
@@ -75,7 +82,7 @@ goToPage(page: number) {
 }
 
 ajouterProduitFavori(idProduit: number) {
-  this.service.addFavori(this.idClient, idProduit).subscribe(
+  this.service.addFavori(this.userIdamir, idProduit).subscribe(
     data => {
       // Mettre à jour les produits
       const produit = this.products.find(p => p.idProduct === idProduit);
@@ -114,7 +121,7 @@ getProductRating(productId: number): void {
 }
 
 addProductToCart(product: any){
-  this.service.addProductToCart(product.idProduct,this.idClient).subscribe(responce => {
+  this.service.addProductToCart(product.idProduct,this.userId).subscribe(responce => {
     console.log(responce);
   }, error => {
     console.log('Error adding product to cart:', error);

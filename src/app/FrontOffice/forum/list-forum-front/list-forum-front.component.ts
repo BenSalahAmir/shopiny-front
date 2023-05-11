@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Post } from 'src/app/Model/Post';
 import { ForumService } from 'src/app/Service/forum/forum.service';
+import { UsersServiceService } from 'src/app/service/Users/users-service.service';
 
 @Component({
   selector: 'app-list-forum-front',
@@ -10,8 +11,10 @@ import { ForumService } from 'src/app/Service/forum/forum.service';
 })
 export class ListForumFrontComponent {
   posts!:any[];
-  userId = "a900a796-5fdf-4416-8f25-ac3ea01f9514";
-  constructor(private service:ForumService,private router: Router){}
+  userId:any= this.servicea.getUserIdFromToken();
+
+  // userId = "a900a796-5fdf-4416-8f25-ac3ea01f9514";
+  constructor(private service:ForumService,private router: Router,private servicea:UsersServiceService){}
 
   ngOnInit(): void {
     this.service.getPosts().subscribe(res => {
@@ -28,7 +31,7 @@ editPost(post: Post) {
 deletePost(post: any): void {
   if (confirm('Are you sure you want to delete this post?')) {
     const idUser="a900a796-5fdf-4416-8f25-ac3ea01f9514";
-    this.service.deletePost(post.idPost, idUser).subscribe(() => {
+    this.service.deletePost(post.idPost, this.userId).subscribe(() => {
       this.posts = this.posts.filter(p => p !== post);
     });
   }

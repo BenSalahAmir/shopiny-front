@@ -4,6 +4,7 @@ import { Product } from '../../model/Product';
 import { Rating } from '../../model/Rating';
 import { ShopServiceService } from 'src/app/service/shopService/shop-service.service';
 import { RatingserviceService } from 'src/app/service/shopService/ratingservice.service';
+import { UsersServiceService } from 'src/app/service/Users/users-service.service';
 
 @Component({
   selector: 'app-detailsproduct',
@@ -17,9 +18,11 @@ export class DetailsproductComponent {
   product1: any;
   productRating!: number;
   rating!:any;
+  userId:any= this.service.getUserIdFromToken();
 
 
-  constructor(private route: ActivatedRoute, private productService: ShopServiceService, private ratingproduct:RatingserviceService) { }
+
+  constructor(private route: ActivatedRoute,private service:UsersServiceService, private productService: ShopServiceService, private ratingproduct:RatingserviceService) { }
 
   ngOnInit(): void {
     this.productId = this.route.snapshot.params['id'];
@@ -68,7 +71,7 @@ export class DetailsproductComponent {
     const newRating = new Rating();
     newRating.nbrEtoilesProduct = star;
   
-    this.ratingproduct.addRating(newRating, this.productId, "a900a796-5fdf-4416-8f25-ac3ea01f9514" ) // on passe l'ID de l'utilisateur en dur pour l'exemple
+    this.ratingproduct.addRating(newRating, this.productId, this.userId ) // on passe l'ID de l'utilisateur en dur pour l'exemple
       .subscribe(
         data => {
           console.log(data);

@@ -5,6 +5,7 @@ import { Post } from 'src/app/Model/Post';
 import { Dislike } from 'src/app/Model/dislike';
 import { Like } from 'src/app/Model/like';
 import { ForumService } from 'src/app/Service/forum/forum.service';
+import { UsersServiceService } from 'src/app/service/Users/users-service.service';
 
 @Component({
   selector: 'app-post-details',
@@ -12,12 +13,14 @@ import { ForumService } from 'src/app/Service/forum/forum.service';
   styleUrls: ['./post-details.component.css']
 })
 export class PostDetailsComponent {
+  userId:any= this.service.getUserIdFromToken();
+
   postId!: number;
   post!: Post;
   comment!:CommentPost;
   commentup!:CommentPost;
   descriptionComment!:string;
-  userId = "a900a796-5fdf-4416-8f25-ac3ea01f9514";
+  // userId = "a900a796-5fdf-4416-8f25-ac3ea01f9514";
   like: Like = new Like();
   dislike: Dislike = new Dislike();
   comments!:CommentPost[];
@@ -25,7 +28,7 @@ export class PostDetailsComponent {
 
   
 
-  constructor(private route: ActivatedRoute, private forumService: ForumService) { }
+  constructor(private route: ActivatedRoute, private forumService: ForumService,private service : UsersServiceService) { }
 
   ngOnInit(): void {
     this.postId = this.route.snapshot.params['id'];
@@ -55,7 +58,7 @@ export class PostDetailsComponent {
   addComment(): void {
     const idUser = "a900a796-5fdf-4416-8f25-ac3ea01f9514";
     console.log('111111');
-    this.forumService.addComment(this.comment, idUser, this.postId)
+    this.forumService.addComment(this.comment, this.userId, this.postId)
       .subscribe(
         () => {
           console.log('comment added successfully');
@@ -71,7 +74,7 @@ export class PostDetailsComponent {
   
   updateComment(idComment:number): void {
     const idUser="a900a796-5fdf-4416-8f25-ac3ea01f9514";
-    this.forumService.updateComment(this.comment,idUser,idComment)
+    this.forumService.updateComment(this.comment,this.userId,idComment)
       .subscribe(
         () => console.log('post updated successfully'),
         error => console.log(error)
@@ -88,7 +91,7 @@ export class PostDetailsComponent {
   deleteComment(comment: any): void {
     if (confirm('Are you sure you want to delete this post?')) {
       const idUser="a900a796-5fdf-4416-8f25-ac3ea01f9514";
-      this.forumService.deleteComment(comment.idComment, idUser).subscribe(() => {
+      this.forumService.deleteComment(comment.idComment, this.userId).subscribe(() => {
         location.reload(); 
       });
     }
